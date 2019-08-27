@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+  <head>
+    {% load static %}
+    {% load i18n %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+
+    <!--<title>Quanfita - You never know how good you are</title>-->
+    <title>Quanfita的文化小镇 - 一个喜欢搞事情的Python程序员的个人博客</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{%static 'css/bootstrap.min.css'%}" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{%static 'css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{%static 'css/templatemo-style.css' %}">
+    <link rel="stylesheet" href="{%static 'css/owl.css' %}">
+
+  </head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+      <!-- Main -->
+        <div id="main">
+          <div class="inner">
+
+            <!-- Header -->
+            <header id="header">
+              <div class="logo">
+                <a href="index.html">Quanfita的文化小镇</a>
+                <!--<a href="index.html">Quanfita's Home</a>-->
+              </div>
+            </header>
+
+            <!-- Banner -->
+            <section class="main-banner">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="banner-content">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="banner-caption">
+                            <!--
+                            <h4>Hello, welcome to <em>Quanfita's Home</em>.</h4>
+                            <span>AWESOME HTML5 &amp; CSS3 TEMPLATE</span>
+                            <p>Do you know that <strong>Ramayana</strong> is a free to use Bootstrap 4 CSS template by <strong>templatemo</strong>? You can edit and add more pages as you wanted for your personal or corporate websites.</p>-->
+                            <h4>你好，欢迎来到<br><em>小Q菌的文化小镇</em>.</h4>
+                            <span>BURNING PASSION FOR TECHNOLOGY</span>
+                            <p>很高兴认识你，我们能够在这里相见，那就证明你一定对技术很感兴趣，想要提高自己。你来到这里，我们就是朋友。在这个“小镇”中，你不光可以寻找到你想要的技术资料，还可以与我一起讨论，共同成长，甚至你还可以把你遇到的困难告诉我，我们一起想办法解决。随着时间的推移你会发现在这里不光有技术，还有美好的生活。。。</p>
+                            <div class="primary-button">
+                              <a href="#">Read More</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Services -->
+            <section class="services">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="service-item first-item">
+                      <div class="icon"></div>
+                      <h4>Web Design</h4>
+                      <p>Credit goes to <a rel="nofollow" href="#">Pexels</a> and <a rel="nofollow" href="https://www.rawpixel.com">Raw Pixel</a> for images used in this template. Thank you.</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="service-item second-item">
+                      <div class="icon"></div>
+                      <h4>Bootstrap 4</h4>
+                      <p>Proin aliquam facilisis ante interdum. Sed nulla feugiat tempus aliquam.</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="service-item third-item">
+                      <div class="icon"></div>
+                      <h4>HTML CSS</h4>
+                      <p>Proin aliquam facilisis ante interdum. Sed nulla feugiat tempus aliquam.</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="service-item fourth-item">
+                      <div class="icon"></div>
+                      <h4>Download Free</h4>
+                      <p>We have many free to use CSS web templates on our site for you.</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="service-item fivth-item">
+                      <div class="icon"></div>
+                      <h4>Get in touch</h4>
+                      <p>You can get the fastest response from <a rel="nofollow" href="#">templatemo</a> facebook page.</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="service-item sixth-item">
+                      <div class="icon"></div>
+                      <h4>Spread a word</h4>
+                      <p>Please tell your friends about our website. This is very helpful.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <div class="tlinks">Collect from <a href="http://www.cssmoban.com/" >建站模板</a></div>
+
+            {% for item in post_list %}
+              <!-- Top Image -->
+              {% ifequal forloop.counter 1 %}
+                <section class="top-image">
+                  <div class="container-fluid">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <img src="{%static 'images/top-image.jpg' %}" alt="">
+                        <div class="down-content">
+                          <h4>{{ item.title }}</h4>
+                          <p>{{ item.excerpt }}</p>
+                          <div class="primary-button">
+                            <a href="{% url 'Post:blog' %}?blog={{ item.id }}">Read More</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              {% endifequal %}
+              {%ifequal forloop.counter 2%}
+              <!-- Left Image -->
+                <section class="left-image">
+                  <div class="container-fluid">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <img src="{%static 'images/left-image.jpg' %}" alt="">
+                      </div>
+                      <div class="col-md-6">
+                        <div class="right-content">
+                          <h4>{{ item.title }}</h4>
+                          <p>{{ item.excerpt }}</p>
+                          <div class="primary-button">
+                            <a href="#">Read More</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              {% endifequal %}
+              {% ifequal forloop.counter 3%}
+                <!-- Right Image -->
+                <section class="right-image">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="left-content">
+                        <h4>{{ item.title }}</h4>
+                        <p>{{ item.excerpt }}</p>
+                        <div class="primary-button">
+                          <a href="#">Read More</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <img src="{%static 'images/right-image.jpg' %}" alt="">
+                    </div>
+                  </div>
+                </div>
+              </section>
+              {%endifequal%}
+            {% endfor %}
+            
+          </div>
+        </div>
+
+      <!-- Sidebar -->
+        <div id="sidebar">
+
+          <div class="inner">
+
+            <!-- Search Box -->
+            <section id="search" class="alt">
+              <form method="get" action="#">
+                <input type="text" name="search" id="search" placeholder="Search..." />
+              </form>
+            </section>
+              
+            <!-- Menu -->
+            <nav id="menu">
+              <ul>
+                <li><a href="index.html">主页</a></li>
+                <li>
+                  <span class="opener">分类</span>
+                  <ul>
+                    {% for c in cate %}
+                      <li><a href="#">{{c.name}}</a></li>
+                    {% endfor %}
+                  </ul>
+                </li>
+                <li>
+                  <span class="opener">标签</span>
+                  <ul>
+                    {% for t in tag %}
+                      <li><a href="#">{{t.name}}</a></li>
+                    {% endfor %}
+                  </ul>
+                </li>
+                <li><a href="#">关于我</a></li>
+                <li><a href="#">留言讨论区</a></li>
+                <li><a href="#">给我资助</a></li>
+              </ul>
+            </nav>
+
+            <!-- Featured Posts -->
+            <div class="featured-posts">
+              <div class="heading">
+                <h2>Featured Posts</h2>
+              </div>
+              <div class="owl-carousel owl-theme">
+                <a href="#">
+                  <div class="featured-item">
+                    <img src="{%static 'images/featured_post_01.jpg' %}" alt="featured one">
+                    <p>Aliquam egestas convallis eros sed gravida. Curabitur consequat sit.</p>
+                  </div>
+                </a>
+                <a href="#">
+                  <div class="featured-item">
+                    <img src="{%static 'images/featured_post_01.jpg' %}" alt="featured two">
+                    <p>Donec a scelerisque massa. Aliquam non iaculis quam. Duis arcu turpis.</p>
+                  </div>
+                </a>
+                <a href="#">
+                  <div class="featured-item">
+                    <img src="{%static 'images/featured_post_01.jpg' %}" alt="featured three">
+                    <p>Suspendisse ac convallis urna, vitae luctus ante. Donec sit amet.</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <!-- Footer -->
+            <footer id="footer">
+              <p class="copyright">Copyright &copy; 2019 Quanfita
+              </p>
+            </footer>
+
+          </div>
+        </div>
+
+    </div>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+    <script src="{%static 'js/jquery.min.js' %}"></script>
+    <script src="{%static 'js/bootstrap.bundle.min.js' %}"></script>
+
+    <script src="{%static 'js/browser.min.js' %}"></script>
+    <script src="{%static 'js/breakpoints.min.js' %}"></script>
+    <script src="{%static 'js/transition.js' %}"></script>
+    <script src="{%static 'js/owl-carousel.js' %}"></script>
+    <script src="{%static 'js/custom.js' %}"></script>
+</body>
+
+
+  </body>
+
+</html>

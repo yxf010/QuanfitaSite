@@ -1,0 +1,2 @@
+Bing每日一图https://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=zh-CN
+二次元图片https://acg.toubiec.cn/random?return=json
