@@ -1,0 +1,46 @@
+{% extends "single.html" %}
+{% load static %}
+                    {% block contentbody %}
+                <div class="blog-single">
+                    <!--<h1>Recent Blog Posts</h1>-->
+                    <div class="post_item">
+                        <!--<img src="{% static 'images/blog1.jpg' %}" alt="blog">-->
+                        
+                        <h2><a href="#">{{ title }}</a></h2>
+                        <ul class="post-tools">
+                            <li class="admin"><a href="#" >{{ tag }}</a></li><!--class="category-ttl"-->
+                            <li class="admin"><a href="#">{{ author }}</a></li>
+                            <li class="date">{{ date }}</li>
+                        </ul>
+                        <script type="text/javascript" async
+                          src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?...">
+                        </script>
+                        <div class="post-text">
+                        {{ content | safe }}
+                        </div>
+                        <div class="shared-sec right">
+                            <ul>
+                                <li> Share On :</li>
+                                <li>
+                                    <a href="#"><span class="fab fa-facebook"></span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="fab fa-weibo" color='#C43C3C'></span></a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/Quanfita"><span class="fab fa-twitter"></span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="fab fa-weixin" color='green'></span></a>
+                                </li>
+                                <li>
+                                    <a href="https://space.bilibili.com/134755800"><span class="fab fa-bilibili" color='pink'></span></a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/Quanfita"><span class="fa fa-link"></span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                    {% endblock %}

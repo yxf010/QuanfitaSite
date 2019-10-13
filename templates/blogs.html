@@ -1,0 +1,167 @@
+{% extends "single.html" %}
+{% load static %}
+                {% block contentbody %}
+                <h1>Recent Blogs</h1>
+                {% for item in content %}
+                <div class="post_item">
+                    <!--<img src="{% static 'images/blog1.jpg' %}" alt="blog">-->
+                    <a href="/category" class="category-ttl">{{ item.category }}</a>
+                    <div class="shared-sec right">
+                        <ul>
+                            <li> Share On :</li>
+                            <li>
+                                <a href="#"><span class="fab fa-facebook"></span></a>
+                            </li>
+                            <li>
+                                <a href="#"><span class="fab fa-instagram"></span></a>
+                            </li>
+                            <li>
+                                <a href="#"><span class="fab fa-twitter"></span></a>
+                            </li>
+                            <li>
+                                <a href="#"><span class="fab fa-pinterest"></span></a>
+                            </li>
+                            <li>
+                                <a href="#"><span class="fab fa-google-plus-g"></span></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <h2><a href="{% url 'Blog:blog' %}?id={{ item.id }}">{{item.title}}</a></h2>
+                    <ul class="post-tools">
+                        <li class="admin"><a href="#">{{ item.author }} </a></li>
+                        <li class="date">{{ item.created_time }}</li>
+                    </ul>
+                    <h6>{{ item.excerpt }}</h6>
+                    <a href="{% url 'Blog:blog' %}?id={{ item.id }}" class="readmore-btn">Continue...</a>
+                </div>
+                {% endfor %}
+                <!--
+                <div class="post_item">
+                    <img src="images/blog1.jpg" alt="blog">
+                    <a href="#" class="category-ttl">Health</a>
+                    <div class="shared-sec right">
+                        <ul>
+                            <li> Share On :</li>
+                            <li>
+                                <a href="#"><span class="fab fa-facebook"></span></a>
+                            </li>
+                            <li>
+                                <a href="#"><span class="fab fa-instagram"></span></a>
+                            </li>
+                            <li>
+                                <a href="#"><span class="fab fa-twitter"></span></a>
+                            </li>
+                            <li>
+                                <a href="#"><span class="fab fa-pinterest"></span></a>
+                            </li>
+                            <li>
+                                <a href="#"><span class="fab fa-google-plus-g"></span></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <h2><a href="#">Girl walking on the road in early morning for mood.</a></h2>
+                    <ul class="post-tools">
+                        <li class="admin"><a href="#">Admin </a></li>
+                        <li class="date">23 Jan 2018</li>
+                    </ul>
+                    <h6>Lorem Ipsum is simply dummy text of the printing and typetook a galley of type and scrambled it to make a type <a href="#">specimen book</a>. It has survived not only fiveLorem Ipsum is simply dummy text of the printing and typetook a galley of type and scrambled it to make a type specimen book. It has survived not only </h6>
+                    <a href="" class="readmore-btn">Continue...</a>
+                </div>
+                <div class="post_item">
+                    <img src="images/blog1.jpg" alt="blog">
+                    <a href="#" class="category-ttl">Health</a>
+                    <div class="shared-sec right">
+                        <ul>
+                            <li> Share On :</li>
+                            <li>
+                                <a href="#"><span class="fab fa-facebook"></span></a>
+                            </li>
+                            <li>
+                                <a href="#"><span class="fab fa-instagram"></span></a>
+                            </li>
+                            <li>
+                                <a href="#"><span class="fab fa-twitter"></span></a>
+                            </li>
+                            <li>
+                                <a href="#"><span class="fab fa-pinterest"></span></a>
+                            </li>
+                            <li>
+                                <a href="#"><span class="fab fa-google-plus-g"></span></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <h2><a href="#">Girl walking on the road in early morning for mood.</a></h2>
+                    <ul class="post-tools">
+                        <li class="admin"><a href="#">Admin </a></li>
+                        <li class="date">23 Jan 2018</li>
+                    </ul>
+                    <h6>Lorem Ipsum is simply dummy text of the printing and typetook a galley of type and scrambled it to make a type <a href="#">specimen book</a>. It has survived not only fiveLorem Ipsum is simply dummy text of the printing and typetook a galley of type and scrambled it to make a type specimen book. It has survived not only </h6>
+                    <a href="" class="readmore-btn">Continue...</a>
+                </div>
+                <div class="post_item">
+                    <img src="images/blog1.jpg" alt="blog">
+                    <a href="#" class="category-ttl">Health</a>
+                    <div class="shared-sec right">
+                        <ul>
+                            <li> Share On :</li>
+                            <li>
+                                <a href="#"><span class="fab fa-facebook"></span></a>
+                            </li>
+                            <li>
+                                <a href="#"><span class="fab fa-instagram"></span></a>
+                            </li>
+                            <li>
+                                <a href="#"><span class="fab fa-twitter"></span></a>
+                            </li>
+                            <li>
+                                <a href="#"><span class="fab fa-pinterest"></span></a>
+                            </li>
+                            <li>
+                                <a href="#"><span class="fab fa-google-plus-g"></span></a>
+                            </li>
+                        </ul>
+                    </div>
+                      <h2><a href="#">Girl walking on the road in early morning for mood.</a></h2>
+                    <ul class="post-tools">
+                        <li class="admin"><a href="#">Admin </a></li>
+                        <li class="date">23 Jan 2018</li>
+                    </ul>
+                    <h6>Lorem Ipsum is simply dummy text of the printing and typetook a galley of type and scrambled it to make a type <a href="#">specimen book</a>. It has survived not only fiveLorem Ipsum is simply dummy text of the printing and typetook a galley of type and scrambled it to make a type specimen book. It has survived not only </h6>
+                    <a href="" class="readmore-btn">Continue...</a>
+                </div>
+                <div class="post_item">
+                    <img src="images/blog1.jpg" alt="blog">
+                    <a href="#" class="category-ttl">Health</a>
+                    <div class="shared-sec right">
+                        <ul>
+                            <li> Share On :</li>
+                            <li>
+                                <a href="#"><span class="fab fa-facebook"></span></a>
+                            </li>
+                            <li>
+                                <a href="#"><span class="fab fa-instagram"></span></a>
+                            </li>
+                            <li>
+                                <a href="#"><span class="fab fa-twitter"></span></a>
+                            </li>
+                            <li>
+                                <a href="#"><span class="fab fa-pinterest"></span></a>
+                            </li>
+                            <li>
+                                <a href="#"><span class="fab fa-google-plus-g"></span></a>
+                            </li>
+                        </ul>
+                    </div>
+                      <h2><a href="#">Girl walking on the road in early morning for mood.</a></h2>
+                    <ul class="post-tools">
+                        <li class="admin"><a href="#">Admin </a></li>
+                        <li class="date">23 Jan 2018</li>
+                    </ul>
+                    <h6>Lorem Ipsum is simply dummy text of the printing and typetook a galley of type and scrambled it to make a type <a href="#">specimen book</a>. It has survived not only fiveLorem Ipsum is simply dummy text of the printing and typetook a galley of type and scrambled it to make a type specimen book. It has survived not only </h6>
+                    <a href="" class="readmore-btn">Continue...</a>
+                </div>-->
+                <button class="load-more-btn">load more</button>
+            </div>
+            {% endblock %}
+{% block realtedblock %}
+{% endblock %}

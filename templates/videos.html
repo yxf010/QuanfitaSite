@@ -1,0 +1,235 @@
+{% extends "single.html" %}
+{% load static %}
+                    {% block contentbody %}
+                <div class="main-content videos-sec">
+                    <h1>Recent Videos</h1>
+                    <div class="video-content">
+                        <ul>
+                            {% for item in content %}
+                            <li>
+                                <div class="video-item">
+                                    <a class="wmBox" href="{% url 'Video:video' %}?id={{ item.id }}">
+                                        <figure style="background:url({{ item.cover }})no-repeat"></figure>
+                                        <div class="content">
+                                            <span class="far fa-play-circle"></span>
+                                            <h3 class="post-ttl">{{ item.name }}</h3>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            {% endfor %}
+                            <!--
+                            <li>
+                                <div class="video-item">
+                                    <a class="wmBox" href="#" data-popup="https://www.youtube.com/embed/WhrjaxEe9bI">
+                                        <figure style="background:url(./images/v2.jpg)no-repeat"></figure>
+                                        <div class="content">
+                                            <span class="far fa-play-circle"></span>
+                                            <h3 class="post-ttl">Wha is design?</h3>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="video-item">
+                                   <a class="wmBox" href="#" data-popup="https://www.youtube.com/embed/vO9tdvFRPBI">
+                                        <figure style="background:url(./images/v3.jpg)no-repeat"></figure>
+                                        <div class="content">
+                                            <span class="far fa-play-circle"></span>
+                                            <h3 class="post-ttl">This is todays furute</h3>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                                       <li>
+                                <div class="video-item">
+                                    <a class="wmBox" href="#" data-popup="https://www.youtube.com/embed/WhrjaxEe9bI">
+                                        <figure style="background:url(./images/v2.jpg)no-repeat"></figure>
+                                        <div class="content">
+                                            <span class="far fa-play-circle"></span>
+                                            <h3 class="post-ttl">Wha is design?</h3>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="video-item">
+                                   <a class="wmBox" href="#" data-popup="https://www.youtube.com/embed/vO9tdvFRPBI">
+                                        <figure style="background:url(./images/v3.jpg)no-repeat"></figure>
+                                        <div class="content">
+                                            <span class="far fa-play-circle"></span>
+                                            <h3 class="post-ttl">This is todays furute</h3>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                                       <li>
+                                <div class="video-item">
+                                    <a class="wmBox" href="#" data-popup="https://www.youtube.com/embed/WhrjaxEe9bI">
+                                        <figure style="background:url(./images/v2.jpg)no-repeat"></figure>
+                                        <div class="content">
+                                            <span class="far fa-play-circle"></span>
+                                            <h3 class="post-ttl">Wha is design?</h3>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="video-item">
+                                   <a class="wmBox" href="#" data-popup="https://www.youtube.com/embed/vO9tdvFRPBI">
+                                        <figure style="background:url(./images/v3.jpg)no-repeat"></figure>
+                                        <div class="content">
+                                            <span class="far fa-play-circle"></span>
+                                            <h3 class="post-ttl">This is todays furute</h3>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                                       <li>
+                                <div class="video-item">
+                                    <a class="wmBox" href="#" data-popup="https://www.youtube.com/embed/WhrjaxEe9bI">
+                                        <figure style="background:url(./images/v2.jpg)no-repeat"></figure>
+                                        <div class="content">
+                                            <span class="far fa-play-circle"></span>
+                                            <h3 class="post-ttl">Wha is design?</h3>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="video-item">
+                                   <a class="wmBox" href="#" data-popup="https://www.youtube.com/embed/vO9tdvFRPBI">
+                                        <figure style="background:url(./images/v3.jpg)no-repeat"></figure>
+                                        <div class="content">
+                                            <span class="far fa-play-circle"></span>
+                                            <h3 class="post-ttl">This is todays furute</h3>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                                       <li>
+                                <div class="video-item">
+                                    <a class="wmBox" href="#" data-popup="https://www.youtube.com/embed/WhrjaxEe9bI">
+                                        <figure style="background:url(./images/v2.jpg)no-repeat"></figure>
+                                        <div class="content">
+                                            <span class="far fa-play-circle"></span>
+                                            <h3 class="post-ttl">Wha is design?</h3>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="video-item">
+                                   <a class="wmBox" href="#" data-popup="https://www.youtube.com/embed/vO9tdvFRPBI">
+                                        <figure style="background:url(./images/v3.jpg)no-repeat"></figure>
+                                        <div class="content">
+                                            <span class="far fa-play-circle"></span>
+                                            <h3 class="post-ttl">This is todays furute</h3>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                                       <li>
+                                <div class="video-item">
+                                    <a class="wmBox" href="#" data-popup="https://www.youtube.com/embed/WhrjaxEe9bI">
+                                        <figure style="background:url(./images/v2.jpg)no-repeat"></figure>
+                                        <div class="content">
+                                            <span class="far fa-play-circle"></span>
+                                            <h3 class="post-ttl">Wha is design?</h3>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="video-item">
+                                   <a class="wmBox" href="#" data-popup="https://www.youtube.com/embed/vO9tdvFRPBI">
+                                        <figure style="background:url(./images/v3.jpg)no-repeat"></figure>
+                                        <div class="content">
+                                            <span class="far fa-play-circle"></span>
+                                            <h3 class="post-ttl">This is todays furute</h3>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                                       <li>
+                                <div class="video-item">
+                                    <a class="wmBox" href="#" data-popup="https://www.youtube.com/embed/WhrjaxEe9bI">
+                                        <figure style="background:url(./images/v2.jpg)no-repeat"></figure>
+                                        <div class="content">
+                                            <span class="far fa-play-circle"></span>
+                                            <h3 class="post-ttl">Wha is design?</h3>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="video-item">
+                                   <a class="wmBox" href="#" data-popup="https://www.youtube.com/embed/vO9tdvFRPBI">
+                                        <figure style="background:url(./images/v3.jpg)no-repeat"></figure>
+                                        <div class="content">
+                                            <span class="far fa-play-circle"></span>
+                                            <h3 class="post-ttl">This is todays furute</h3>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>-->
+
+
+                           
+                        </ul>
+                        <div class="load-more">
+                            <button class="load-more-btn">load more</button>
+                        </div>
+                        </div>
+                    </div>
+                        {% endblock %}
+                        <!--
+                        <aside class="aside-sec">
+                            <div class="ads-sec">
+                                <h2>Advertisement</h2>
+                                <img src="images/600-ad.jpg" alt="ad">
+                            </div>
+                            <div class="popular-posts">
+                                <h2>Popular Posts</h2>
+                                <div class="p_post-item">
+                                    <div class="img-sec">
+                                        <img src="images/pop-post1.jpg" alt="pop-post">
+                                        <a href="#" class="category-ttl">Health</a>
+                                    </div>
+                                    <h3>Girl walking on the road in early morning for mood.</h3>
+                                    <h6>Lorem Ipsum is simply dummy text of the printing and typesetbeen the industry's standard dummy text ever since the 1500s, when an unknown printer</h6>
+                                    <ul class="post-tools">
+                                        <li class="admin"><a href="#">Admin </a></li>
+                                        <li class="date">23 Jan 2018</li>
+                                    </ul>
+                                </div>
+                                <div class="p_post-item">
+                                    <div class="img-sec">
+                                        <img src="images/pop-post2.jpg" alt="pop-post">
+                                        <a href="#" class="category-ttl">Health</a>
+                                    </div>
+                                    <h3>Girl walking on the road in early morning for mood.</h3>
+                                    <h6>Lorem Ipsum is simply dummy text of the printing and typesetbeen the industry's standard dummy text ever since the 1500s, when an unknown printer</h6>
+                                    <ul class="post-tools">
+                                        <li class="admin"><a href="#">Admin </a></li>
+                                        <li class="date">23 Jan 2018</li>
+                                    </ul>
+                                </div>
+                                <div class="p_post-item">
+                                    <div class="img-sec">
+                                        <img src="images/pop-post1.jpg" alt="pop-post">
+                                        <a href="#" class="category-ttl">Health</a>
+                                    </div>
+                                    <h3>Girl walking on the road in early morning for mood.</h3>
+                                    <h6>Lorem Ipsum is simply dummy text of the printing and typesetbeen the industry's standard dummy text ever since the 1500s, when an unknown printer</h6>
+                                    <ul class="post-tools">
+                                        <li class="admin"><a href="#">Admin </a></li>
+                                        <li class="date">23 Jan 2018</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </aside>
+                        </div>
+                        </div>
+    </section>
+-->

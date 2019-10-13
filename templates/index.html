@@ -1,280 +1,371 @@
-<!DOCTYPE html>
-<html lang="zh">
-
-  <head>
-    {% load static %}
-    {% load i18n %}
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
-
-    <!--<title>Quanfita - You never know how good you are</title>-->
-    <title>Quanfita的文化小镇 - 一个喜欢搞事情的Python程序员的个人博客</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="{%static 'css/bootstrap.min.css'%}" rel="stylesheet">
-
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="{%static 'css/fontawesome.css' %}">
-    <link rel="stylesheet" href="{%static 'css/templatemo-style.css' %}">
-    <link rel="stylesheet" href="{%static 'css/owl.css' %}">
-
-  </head>
-
-<body class="is-preload">
-
-    <!-- Wrapper -->
-    <div id="wrapper">
-
-      <!-- Main -->
-        <div id="main">
-          <div class="inner">
-
-            <!-- Header -->
-            <header id="header">
-              <div class="logo">
-                <a href="index.html">Quanfita的文化小镇</a>
-                <!--<a href="index.html">Quanfita's Home</a>-->
-              </div>
-            </header>
-
-            <!-- Banner -->
-            <section class="main-banner">
-              <div class="container-fluid">
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="banner-content">
-                      <div class="row">
-                        <div class="col-md-12">
-                          <div class="banner-caption">
-                            <!--
-                            <h4>Hello, welcome to <em>Quanfita's Home</em>.</h4>
-                            <span>AWESOME HTML5 &amp; CSS3 TEMPLATE</span>
-                            <p>Do you know that <strong>Ramayana</strong> is a free to use Bootstrap 4 CSS template by <strong>templatemo</strong>? You can edit and add more pages as you wanted for your personal or corporate websites.</p>-->
-                            <h4>你好，欢迎来到<br><em>小Q菌的文化小镇</em>.</h4>
-                            <span>BURNING PASSION FOR TECHNOLOGY</span>
-                            <p>很高兴认识你，我们能够在这里相见，那就证明你一定对技术很感兴趣，想要提高自己。你来到这里，我们就是朋友。在这个“小镇”中，你不光可以寻找到你想要的技术资料，还可以与我一起讨论，共同成长，甚至你还可以把你遇到的困难告诉我，我们一起想办法解决。随着时间的推移你会发现在这里不光有技术，还有美好的生活。。。</p>
-                            <div class="primary-button">
-                              <a href="#">Read More</a>
+{% extends "base.html" %}
+{% load static %}
+{% block mainbody %}
+    <section class="news-banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-sm-12">
+                    <div class="big-img" style="background:url({% static './images/banner1.jpg' %})no-repeat;">
+                        <div class="post-content">
+                            <div class="content">
+                                <a href="" class="category-ttl">people & business</a>
+                                <a href="">
+                                    <h3 class="post-ttl">Business People Walking on the street to their offices inearly morning...</h3>
+                                </a>
+                                <ul class="post-tools">
+                                    <li class="admin"><a href="#">Admin </a></li>
+                                    <li class="date">23 Jan 2018</li>
+                                    <li class="comment">(0) Comments</li>
+                                </ul>
                             </div>
-                          </div>
                         </div>
-                      </div>
                     </div>
-                  </div>
                 </div>
-              </div>
-            </section>
-
-            <!-- Services -->
-            <section class="services">
-              <div class="container-fluid">
-                <div class="row">
-                  <div class="col-md-4">
-                    <div class="service-item first-item">
-                      <div class="icon"></div>
-                      <h4>Web Design</h4>
-                      <p>Credit goes to <a rel="nofollow" href="#">Pexels</a> and <a rel="nofollow" href="https://www.rawpixel.com">Raw Pixel</a> for images used in this template. Thank you.</p>
+                <div class="col-lg-4 col-sm-12">
+                    <div class="small-img" style="background:url({% static './images/banner2.jpg' %})no-repeat;">
+                        <div class="post-content">
+                            <div class="content">
+                                <a href="" class="category-ttl">internet</a>
+                                <a href="#">
+                                    <h3 class="post-ttl">Man walking on the steps wearing sports shoes</h3>
+                                </a>
+                                <ul class="post-tools">
+                                    <li class="admin"> <a href="#"> Admin </a></li>
+                                    <li class="date">23 Jan 2018</li>
+                                    <li class="comment">(0) Comments</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="service-item second-item">
-                      <div class="icon"></div>
-                      <h4>Bootstrap 4</h4>
-                      <p>Proin aliquam facilisis ante interdum. Sed nulla feugiat tempus aliquam.</p>
+                    <div class="small-img" style="background:url({% static './images/banner3.jpg' %})no-repeat;">
+                        <div class="post-content">
+                            <div class="content">
+                                <a href="" class="category-ttl">Food</a>
+                                <a href="#">
+                                    <h3 class="post-ttl">beautiful blond girl walking on the street</h3>
+                                </a>
+                                <ul class="post-tools">
+                                    <li class="admin"> <a href="#"> Admin </a></li>
+                                    <li class="date">23 Jan 2018</li>
+                                    <li class="comment">(0) Comments</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="service-item third-item">
-                      <div class="icon"></div>
-                      <h4>HTML CSS</h4>
-                      <p>Proin aliquam facilisis ante interdum. Sed nulla feugiat tempus aliquam.</p>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="service-item fourth-item">
-                      <div class="icon"></div>
-                      <h4>Download Free</h4>
-                      <p>We have many free to use CSS web templates on our site for you.</p>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="service-item fivth-item">
-                      <div class="icon"></div>
-                      <h4>Get in touch</h4>
-                      <p>You can get the fastest response from <a rel="nofollow" href="#">templatemo</a> facebook page.</p>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="service-item sixth-item">
-                      <div class="icon"></div>
-                      <h4>Spread a word</h4>
-                      <p>Please tell your friends about our website. This is very helpful.</p>
-                    </div>
-                  </div>
                 </div>
-              </div>
-            </section>
-            <div class="tlinks">Collect from <a href="http://www.cssmoban.com/" >建站模板</a></div>
-
-            {% for item in post_list %}
-              <!-- Top Image -->
-              {% ifequal forloop.counter 1 %}
-                <section class="top-image">
-                  <div class="container-fluid">
-                    <div class="row">
-                      <div class="col-md-12">
-                        <img src="{%static 'images/top-image.jpg' %}" alt="">
-                        <div class="down-content">
-                          <h4>{{ item.title }}</h4>
-                          <p>{{ item.excerpt }}</p>
-                          <div class="primary-button">
-                            <a href="{% url 'Post:blog' %}?blog={{ item.id }}">Read More</a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-              {% endifequal %}
-              {%ifequal forloop.counter 2%}
-              <!-- Left Image -->
-                <section class="left-image">
-                  <div class="container-fluid">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <img src="{%static 'images/left-image.jpg' %}" alt="">
-                      </div>
-                      <div class="col-md-6">
-                        <div class="right-content">
-                          <h4>{{ item.title }}</h4>
-                          <p>{{ item.excerpt }}</p>
-                          <div class="primary-button">
-                            <a href="#">Read More</a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-              {% endifequal %}
-              {% ifequal forloop.counter 3%}
-                <!-- Right Image -->
-                <section class="right-image">
-                <div class="container-fluid">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="left-content">
-                        <h4>{{ item.title }}</h4>
-                        <p>{{ item.excerpt }}</p>
-                        <div class="primary-button">
-                          <a href="#">Read More</a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <img src="{%static 'images/right-image.jpg' %}" alt="">
-                    </div>
-                  </div>
-                </div>
-              </section>
-              {%endifequal%}
-            {% endfor %}
-            
-          </div>
-        </div>
-
-      <!-- Sidebar -->
-        <div id="sidebar">
-
-          <div class="inner">
-
-            <!-- Search Box -->
-            <section id="search" class="alt">
-              <form method="get" action="#">
-                <input type="text" name="search" id="search" placeholder="Search..." />
-              </form>
-            </section>
-              
-            <!-- Menu -->
-            <nav id="menu">
-              <ul>
-                <li><a href="index.html">主页</a></li>
-                <li>
-                  <span class="opener">分类</span>
-                  <ul>
-                    {% for c in cate %}
-                      <li><a href="#">{{c.name}}</a></li>
-                    {% endfor %}
-                  </ul>
-                </li>
-                <li>
-                  <span class="opener">标签</span>
-                  <ul>
-                    {% for t in tag %}
-                      <li><a href="#">{{t.name}}</a></li>
-                    {% endfor %}
-                  </ul>
-                </li>
-                <li><a href="#">关于我</a></li>
-                <li><a href="#">留言讨论区</a></li>
-                <li><a href="#">给我资助</a></li>
-              </ul>
-            </nav>
-
-            <!-- Featured Posts -->
-            <div class="featured-posts">
-              <div class="heading">
-                <h2>Featured Posts</h2>
-              </div>
-              <div class="owl-carousel owl-theme">
-                <a href="#">
-                  <div class="featured-item">
-                    <img src="{%static 'images/featured_post_01.jpg' %}" alt="featured one">
-                    <p>Aliquam egestas convallis eros sed gravida. Curabitur consequat sit.</p>
-                  </div>
-                </a>
-                <a href="#">
-                  <div class="featured-item">
-                    <img src="{%static 'images/featured_post_01.jpg' %}" alt="featured two">
-                    <p>Donec a scelerisque massa. Aliquam non iaculis quam. Duis arcu turpis.</p>
-                  </div>
-                </a>
-                <a href="#">
-                  <div class="featured-item">
-                    <img src="{%static 'images/featured_post_01.jpg' %}" alt="featured three">
-                    <p>Suspendisse ac convallis urna, vitae luctus ante. Donec sit amet.</p>
-                  </div>
-                </a>
-              </div>
             </div>
-
-            <!-- Footer -->
-            <footer id="footer">
-              <p class="copyright">Copyright &copy; 2019 Quanfita
-              </p>
-            </footer>
-
-          </div>
         </div>
-
+    </section>
+    <section class="trending-news mb-100">
+        <div class="title-sec">
+            <div class="title-container">
+                <h2 class="title">Top Trending News</h2>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-md-7 col-sm-12">
+                    <div class="post-content">
+                        <figure style="background:url({% static './images/trending-1.jpg' %})no-repeat"></figure>
+                        <a href="#" class="category-ttl">People & Business</a>
+                        <ul class="post-tools right">
+                            <li class="admin"> <a href="#"> Admin </a></li>
+                            <li class="date">23 Jan 2018</li>
+                            <li class="comment">(0) Comments</li>
+                        </ul>
+                        <a href="#">
+                            <h3 class="post-ttl">Beautiful Robot looking at camera with nice expression</h3>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-5 col-sm-12">
+                    <div class="post-content">
+                        <figure style="background:url({% static './images/trending-2.jpg' %})no-repeat"></figure>
+                        <a href="#" class="category-ttl">People & Business</a>
+                        <a href="#">
+                            <h3 class="post-ttl">Man working in building with welding machine</h3>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="small-post">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-4 col-5 img-sec">
+                                <figure style="background:url({% static './images/trending-3.jpg' %})no-repeat"></figure>
+                            </div>
+                            <div class="col-md-6 col-sm-8 col-7">
+                                <a href="#">
+                                    <h3 class="post-ttl">Beautiful girl posting for photo in morning</h3>
+                                </a>
+                                <h5 class="post-text">
+                                Lorem Ipsum is simply dummy text of the printing and typeset been the industry's standard
+                            </h5>
+                                <ul class="post-tools">
+                                    <li class="admin"> <a href="#"> Admin </a></li>
+                                    <li class="date">23 Jan 2018</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="small-post">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-4 col-5 img-sec">
+                                <figure style="background:url({% static './images/trending-4.jpg' %})no-repeat"></figure>
+                            </div>
+                            <div class="col-md-6 col-sm-8 col-7">
+                                <a href="#">
+                                    <h3 class="post-ttl">Beautiful girl posting for photo in morning</h3>
+                                </a>
+                                <h5 class="post-text">
+                                Lorem Ipsum is simply dummy text of the printing and typeset been the industry's standard
+                            </h5>
+                                <ul class="post-tools">
+                                    <li class="admin"> <a href="#"> Admin </a></li>
+                                    <li class="date">23 Jan 2018</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Ad section -->
+    <div class="responsive ad-sec">
+        <div class="container">
+            <img src="{% static 'images/responsive-ad.jpg' %}" alt="ad">
+        </div>
     </div>
-
-  <!-- Scripts -->
-  <!-- Bootstrap core JavaScript -->
-    <script src="{%static 'js/jquery.min.js' %}"></script>
-    <script src="{%static 'js/bootstrap.bundle.min.js' %}"></script>
-
-    <script src="{%static 'js/browser.min.js' %}"></script>
-    <script src="{%static 'js/breakpoints.min.js' %}"></script>
-    <script src="{%static 'js/transition.js' %}"></script>
-    <script src="{%static 'js/owl-carousel.js' %}"></script>
-    <script src="{%static 'js/custom.js' %}"></script>
-</body>
-
-
-  </body>
-
-</html>
+    <div class="title-sec">
+        <div class="title-container">
+            <h2 class="title">Top Trending Blogs</h2>
+        </div>
+    </div>
+    <!-- End ad section -->
+    <section class="trending-tabsec">
+        <div class="container">
+            <ul class="nav nav-tabs" role="tablist">
+              {% for cate in category %}
+                <li class="nav-item">
+                    <a class="nav-link {% if forloop.first %}active{% endif %}" href="#{{ cate }}" role="tab" data-toggle="tab">{{ cate }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+            {% for cate in category %}
+            <div role="tabpanel" class="tab-pane fade {% if forloop.first %}active{% endif %}" id="{{ cate }}">
+                 <div class="row">
+                     <div class="col-md-5">
+                         <div class="big-img" style="background:url({% static './images/tab1.jpg' %})no-repeat">
+                             <div class="content">
+                                 <a href="" class="category-ttl">{{ cate }}</a>
+                                 <a href="#">
+                                     <h3 class="post-ttl">Girl walking on the road in early morning for mood.</h3>
+                                 </a>
+                                 <ul class="post-tools">
+                                     <li class="admin"><a href="#">Admin </a></li>
+                                     <li class="date">23 Jan 2018</li>
+                                     <li class="comment">(0) Comments</li>
+                                 </ul>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="col-md-7">
+                         <div class="row">
+                             <div class="col-md-6">
+                                 <div class="img-sec" style="background:url({% static './images/tab2.jpg' %})no-repeat">
+                                     <a href="" class="category-ttl">Health</a>
+                                 </div>
+                                 <div class="content-text">
+                                     <a href="#">
+                                         <h3 class="post-ttl">Girl walking on the road in early morning for mood.</h3>
+                                     </a>
+                                     <h5 class="post-text">
+                                      Lorem Ipsum is simply dummy text of the printing and typesetbeen the industry's standard dummy text ever since the 1500s, when an unknown printer 
+                                  </h5>
+                                     <ul class="post-tools">
+                                         <li class="admin"><a href="#">Admin </a></li>
+                                         <li class="date">23 Jan 2018</li>
+                                     </ul>
+                                 </div>
+                             </div>
+                             <div class="col-md-6">
+                                 <div class="img-sec" style="background:url({% static './images/tab3.jpg' %})no-repeat">
+                                     <a href="" class="category-ttl">Health</a>
+                                 </div>
+                                 <div class="content-text">
+                                     <a href="#">
+                                         <h3 class="post-ttl">Girl walking on the road in early morning for mood.</h3>
+                                     </a>
+                                     <h5 class="post-text">
+                                     Lorem Ipsum is simply dummy text of the printing and typesetbeen the industry's standard dummy text ever since the 1500s, when an unknown printer 
+                                  </h5>
+                                     <ul class="post-tools">
+                                         <li class="admin"><a href="#">Admin </a></li>
+                                         <li class="date">23 Jan 2018</li>
+                                     </ul>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="row small-post">
+                     <div class="col-md-4 col-sm-8">
+                         <div class="post-content">
+                             <figure style="background:url({% static './images/tab4.jpg'%})no-repeat"></figure>
+                             <div class="content">
+                                 <a href="#">
+                                     <h3 class="post-ttl">Girl walking on the road in early morning for mood.</h3>
+                                 </a>
+                                 <ul class="post-tools">
+                                     <li class="admin"><a href="#">Admin </a></li>
+                                     <li class="date">23 Jan 2018</li>
+                                 </ul>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="col-md-4 col-sm-8">
+                         <div class="post-content">
+                             <figure style="background:url({% static './images/tab5.jpg' %})no-repeat"></figure>
+                             <div class="content">
+                                 <a href="#">
+                                     <h3 class="post-ttl">Girl walking on the road in early morning for mood.</h3>
+                                 </a>
+                                 <ul class="post-tools">
+                                     <li class="admin"><a href="#">Admin </a></li>
+                                     <li class="date">23 Jan 2018</li>
+                                 </ul>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="col-md-4 col-sm-8">
+                         <div class="post-content">
+                             <figure style="background:url({% static './images/tab6.jpg' %})no-repeat"></figure>
+                             <div class="content">
+                                 <a href="#">
+                                     <a href="#">
+                                         <h3 class="post-ttl">Girl walking on the road in early morning for mood.</h3>
+                                     </a>
+                                 </a>
+                                 <ul class="post-tools">
+                                     <li class="admin"><a href="#">Admin </a></li>
+                                     <li class="date">23 Jan 2018</li>
+                                 </ul>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+            {% endfor %}
+         </div>
+          </div>
+    </section>
+    <section class="trending-videos mb-100">
+        <div class="title-sec">
+            <div class="title-container">
+                <h2 class="title">Top Trending Videos</h2>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="video-item" style="background:url(./images/video1.jpg)no-repeat">
+                        <div class="content">
+                            <span class="far fa-play-circle"></span>
+                            <h3 class="post-ttl">How a watch works</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-6 small-img">
+                            <div class="video-item" style="background:url(./images/video2.jpg)no-repeat">
+                                <div class="content">
+                                    <span class="far fa-play-circle"></span>
+                                    <h3 class="post-ttl">How a watch works</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 small-img">
+                            <div class="video-item" style="background:url(./images/video3.jpg)no-repeat">
+                                <div class="content">
+                                    <span class="far fa-play-circle"></span>
+                                    <h3 class="post-ttl">This is todays furute</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 small-img">
+                            <div class="video-item" style="background:url(./images/video4.jpg)no-repeat">
+                                <div class="content">
+                                    <span class="far fa-play-circle"></span>
+                                    <h3 class="post-ttl">Yes this is awesome</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 small-img">
+                            <div class="video-item" style="background:url(./images/video5.jpg)no-repeat">
+                                <div class="content">
+                                    <span class="far fa-play-circle"></span>
+                                    <h3 class="post-ttl">CSS and Mentions</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Ad section -->
+    <div class="responsive ad-sec">
+        <div class="container">
+            <img src="{% static 'images/responsive-ad.jpg' %}" alt="ad">
+        </div>
+    </div>
+    <!-- End ad section -->
+    <!--
+    <section class="subscribe-sec" style="background:url(./images/subscribe.jpg)no-repeat;">
+        <div class="cover"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-8 subscribe">
+                    <h3>Subscribe to newsletter</h3>
+                    <h5>Sign up to our weekly newsletter and never miss an update from us !</h5>
+                    <div class="mail-sec">
+                        <form>
+                            <input type="email" placeholder="Your Email" class="form-control" required>
+                            <button class="btn submit-btn">Submit</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-8">
+                    <ul class="social-count">
+                        <li>
+                            <div class="facebook">
+                                <span><i class="fab fa-facebook-square"></i></span>
+                                <h4>239K</h4>
+                                <h5>Fans</h5>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="twitter">
+                                <span><i class="fab fa-twitter"></i></span>
+                                <h4>445K</h4>
+                                <h5>Fans</h5>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="youtube">
+                                <span><i class="fab fa-youtube-square"></i></span>
+                                <h4>152K</h4>
+                                <h5>Fans</h5>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>-->
+{% endblock %}

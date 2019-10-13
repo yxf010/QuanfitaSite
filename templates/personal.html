@@ -1,0 +1,179 @@
+{% extends "base.html" %}
+{% load static %}
+<!-- 介绍条 -->
+{% block mainbody %}
+<!--
+    <section class="container-fluid introduce">
+    	<div class="row">
+    		<div class="col-md-12"> 
+    				<h1>个人中心<em>&nbsp;&nbsp;&nbsp;personal center</em></h1>
+    		</div>
+    	</div>
+    </section>-->
+
+    <!-- 左右分栏内容 -->
+    <script type="text/javascript">
+        function checkUser(){
+        var result = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+
+        if(result == ""  ){
+            alert("用户名不能为空");
+            return false;
+        }
+        if(password == ""  ){
+            alert("密码不能为空");
+            return false;
+        }
+            document.getElementById("login-form").submit();
+        }
+    </script>
+    
+    <section class="trending-tabsec">
+        <div class="container">
+            <ul class="nav nav-tabs" role="tablist" style="float: left;">
+
+                <li class="nav-item" style="width: 150px;text-align: center;">
+                    <a class="nav-link active" href="#info" role="tab" data-toggle="tab">我的信息</a>
+                </li>
+                <li class="nav-item" style="width: 150px;text-align: center;">
+                    <a class="nav-link" href="#blog" role="tab" data-toggle="tab">我的博客</a>
+                </li>
+                <li class="nav-item" style="width: 150px;text-align: center;">
+                    <a class="nav-link" href="#video" role="tab" data-toggle="tab">我的视频</a>
+                </li>
+                <li class="nav-item" style="width: 150px;text-align: center;">
+                    <a class="nav-link" href="#setting" role="tab" data-toggle="tab">设置</a>
+                </li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content" style="border-bottom: 1px solid #ccc;margin-top: 0px;padding-top: 0px;">
+            <div role="tabpanel" class="tab-pane fade active" id="info">
+                <div class="row" style="margin-left: 20px;margin-right: 20px;border-bottom: 1px solid #ccc;">
+                    <div class="col-md-4" style="padding: 10px">
+                    <span class="fa fa-vcard" aria-hidden="true"></span>我的信息
+                    </div>
+                </div>
+                <form enctype="multipart/form-data" method="post" id="info-form">
+                <div class="row">
+                    <div class="col-md-4">
+                        <ul style="margin-right: 10px;margin-left: 40px;margin-bottom: 80px;">
+                            <li style="padding: 10px">
+                                    <div class="list-group">
+                                        <div style="font-size: 20px;font-family: 'Microsoft YaHei';padding-bottom: 10px;">
+                                        {{ info_form.avatar.label }}</div>
+                                        <center><a href="#"><img class="img-circle" src="/{{ user.avatar }}"
+                                             style="width: 80px;height: 80px;"/></a></center>
+                                        <!--
+                                        <input type="file" name="image" accept="image/*" id="id_image"></p>-->
+                                    </div>
+                            </li>
+                            <li style="padding: 10px">
+                                <div class="list-group">
+                                    <div style="font-size: 20px;font-family: 'Microsoft YaHei';padding-bottom: 10px;">
+                                    {{ info_form.nick_name.label }}</div>
+                                    {{ info_form.nick_name }}
+                                </div>
+                            </li>
+                            <li style="padding: 10px">
+                                <div class="list-group">
+                                    <div style="font-size: 20px;font-family: 'Microsoft YaHei';padding-bottom: 10px;">
+                                    {{ info_form.sex.label }}</div>
+                                    {{ info_form.sex }}
+                                </div>
+                            </li>
+                            <li style="padding: 10px">
+                                <div class="list-group">
+                                    <div style="font-size: 20px;font-family: 'Microsoft YaHei';padding-bottom: 10px;">
+                                    {{ info_form.email.label }}</div>
+                                    {{ info_form.email }}
+                                </div>
+                            </li>
+                            <li style="padding: 10px">
+                                <div class="list-group">
+                                    <div style="font-size: 20px;font-family: 'Microsoft YaHei';padding-bottom: 10px;">
+                                    {{ info_form.mobile.label }}</div>
+                                    {{ info_form.mobile }}
+                                </div>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    <div class="col-md-8">
+                        <ul style="margin-left: 10px;margin-right: 40px;margin-bottom: 80px; ">
+                            <li style="padding: 10px">
+                                <div class="list-group">
+                                    <div style="font-size: 20px;font-family: 'Microsoft YaHei';padding-bottom: 10px;">
+                                    {{ info_form.birthday.label }}</div>
+                                    <div style="width: 200px">{{ info_form.birthday }}</div>
+                                </div>
+                            </li>
+                            <li style="padding: 10px;">
+                                <div class="list-group">
+                                    <div style="font-size: 20px;font-family: 'Microsoft YaHei';padding-bottom: 10px;">
+                                    {{ info_form.signature.label }}</div>
+                                    {{ info_form.signature }}
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="col-md-8" style="padding-top: 10px">
+                                    <center><button type="submit" class="category-ttl" style="background-color: #002157;width: 120px;font-size: 18px; font-family: 'Microsoft YaHei'" onclick="checkUser()">保存</button></center>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+            </div>
+        </div>
+                 <!--
+                 <div class="row small-post">
+                     <div class="col-md-4 col-sm-8">
+                         <div class="post-content">
+                             <figure style="background:url({% static './images/tab4.jpg'%})no-repeat"></figure>
+                             <div class="content">
+                                 <a href="#">
+                                     <h3 class="post-ttl">Girl walking on the road in early morning for mood.</h3>
+                                 </a>
+                                 <ul class="post-tools">
+                                     <li class="admin"><a href="#">Admin </a></li>
+                                     <li class="date">23 Jan 2018</li>
+                                 </ul>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="col-md-4 col-sm-8">
+                         <div class="post-content">
+                             <figure style="background:url({% static './images/tab5.jpg' %})no-repeat"></figure>
+                             <div class="content">
+                                 <a href="#">
+                                     <h3 class="post-ttl">Girl walking on the road in early morning for mood.</h3>
+                                 </a>
+                                 <ul class="post-tools">
+                                     <li class="admin"><a href="#">Admin </a></li>
+                                     <li class="date">23 Jan 2018</li>
+                                 </ul>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="col-md-4 col-sm-8">
+                         <div class="post-content">
+                             <figure style="background:url({% static './images/tab6.jpg' %})no-repeat"></figure>
+                             <div class="content">
+                                 <a href="#">
+                                     <a href="#">
+                                         <h3 class="post-ttl">Girl walking on the road in early morning for mood.</h3>
+                                     </a>
+                                 </a>
+                                 <ul class="post-tools">
+                                     <li class="admin"><a href="#">Admin </a></li>
+                                     <li class="date">23 Jan 2018</li>
+                                 </ul>
+                             </div>
+                         </div>
+                     </div>
+                 </div>-->
+          </div>
+    </section>
+    {% endblock %}

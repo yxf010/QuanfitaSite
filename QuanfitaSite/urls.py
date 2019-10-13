@@ -15,11 +15,23 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls import url
 from django.conf import settings
 from django.conf.urls.static import static
-
+from .views import IndexView, page_not_found, live2d
+from django.views.static import serve
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path(r'',include('Post.urls',namespace='Post'))
+    url(r'^$', IndexView.as_view(), name="index"),
+    path(r'', include('Blog.urls',namespace='Blog')),
+    path(r'', include('api.urls',namespace='Api')),
+    path(r'', include('Video.urls',namespace='Video')),
+    path(r'', include('User.urls',namespace='User')),
+    url(r'^captcha', include('captcha.urls')),
+    url(r'^comments/', include('django_comments.urls')),
+    url(r'live2d/',live2d),
+    #path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
 ]
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+hander404 = page_not_found

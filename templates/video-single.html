@@ -1,0 +1,43 @@
+{% extends "single.html" %}
+{% load static %}
+                    {% block contentbody %}
+                <div class="blog-single">
+                    <!--<h1>Recent Blog Posts</h1>-->
+                    <div class="post_item">
+                        <!--<img src="{% static 'images/blog1.jpg' %}" alt="blog">-->
+                        
+                        <h2><a href="#">{{ title }}</a></h2>
+                        <ul class="post-tools">
+                            <li class="admin"><a href="#">{{ tag }}</a></li>
+                            <li class="admin"><a href="#">{{ author }}</a></li>
+                            <li class="date">{{ date }}</li>
+                        </ul>
+                        <p>
+                        <iframe src="{{ video_url }}" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="700" height="530" high_quality="1"></iframe></p>
+                        <p>{{ description }}</p>
+                        <div class="shared-sec right">
+                            <ul>
+                                <li> Share On :</li>
+                                <li>
+                                    <a href="#"><span class="fab fa-facebook"></span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="fab fa-weibo" color='#C43C3C'></span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="fab fa-twitter"></span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="fab fa-weixin" color='green'></span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="fab fa-bilibili" color='pink'></span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="fa fa-link"></span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                    {% endblock %}

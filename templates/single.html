@@ -1,0 +1,171 @@
+{% extends "base.html" %}
+{% load static %}
+{% block mainbody %}
+    <div class="bread-crome">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="/" class="prim">Home </a>
+                </li>
+                <li class="breadcrumb-item">
+                    {{ tag }}
+                </li>
+            </ol>
+        </div>
+    </div>
+    <section class="blog-sec">
+        <div class="container">
+            <div class="main-content">
+                {% block contentbody %}
+                <div class="blog-single">
+                    <!--
+                    <div class="post_item">
+                        
+                        <a href="#" class="category-ttl">{{ category }}</a>
+                        <div class="shared-sec right">
+                            <ul>
+                                <li> Share On :</li>
+                                <li>
+                                    <a href="#"><span class="fab fa-facebook"></span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="fab fa-weibo" color='#C43C3C'></span></a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/Quanfita"><span class="fab fa-twitter"></span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="fab fa-weixin" color='green'></span></a>
+                                </li>
+                                <li>
+                                    <a href="https://space.bilibili.com/134755800"><span class="fab fa-bilibili" color='pink'></span></a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/Quanfita"><span class="fa fa-link"></span></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <h2><a href="#">{{ docname }}</a></h2>
+                        <ul class="post-tools">
+                            <li class="admin"><a href="#">{{ author }}</a></li>
+                            <li class="date">{{ date }}</li>
+                        </ul>
+                        {{ content | safe }}
+                    </div>-->
+                </div>
+                {% endblock %}
+                {% block realtedblock %}
+                <div class="realted-posts">
+                    <h2>You May Like These</h2>
+                    <ul>
+                        <li class="popular-posts">
+                        
+                                <div class="img-sec">
+                                    <figure style="background:url({% static './images/related1.jpg' %})no-repeat"></figure>
+                                    <!-- <img src="images/related1.jpg" alt="pop-post"> -->
+                                    <a href="#" class="category-ttl">Health</a>
+                                </div>
+                                <h3>Girl walking on the road in early morning for mood.</h3>
+                                <h6>Lorem Ipsum is simply dummy text of the printing and typesetbeen the industry's standard dummy text ever since the 1500s, when an unknown printer</h6>
+                                <ul class="post-tools">
+                                    <li class="admin"><a href="#">Admin </a></li>
+                                    <li class="date">23 Jan 2018</li>
+                                </ul>
+                            
+                        </li>
+                        <li class="popular-posts">
+                            
+                                <div class="img-sec">
+                                   <figure style="background:url({%static './images/related2.jpg'%})no-repeat"></figure>
+                                    <a href="#" class="category-ttl">Health</a>
+                                </div>
+                                <h3>Girl walking on the road in early morning for mood.</h3>
+                                <h6>Lorem Ipsum is simply dummy text of the printing and typesetbeen the industry's standard dummy text ever since the 1500s, when an unknown printer</h6>
+                                <ul class="post-tools">
+                                    <li class="admin"><a href="#">Admin </a></li>
+                                    <li class="date">23 Jan 2018</li>
+                                </ul>
+                            
+                        </li>
+
+                                       <li class="popular-posts">
+                        
+                                <div class="img-sec">
+                                    <figure style="background:url({%static './images/related2.jpg'%})no-repeat"></figure>
+                                    <!-- <img src="images/related1.jpg" alt="pop-post"> -->
+                                    <a href="#" class="category-ttl">Health</a>
+                                </div>
+                                <h3>Girl walking on the road in early morning for mood.</h3>
+                                <h6>Lorem Ipsum is simply dummy text of the printing and typesetbeen the industry's standard dummy text ever since the 1500s, when an unknown printer</h6>
+                                <ul class="post-tools">
+                                    <li class="admin"><a href="#">Admin </a></li>
+                                    <li class="date">23 Jan 2018</li>
+                                </ul>
+                            
+                        </li>
+                        <li class="popular-posts">
+                            
+                                <div class="img-sec">
+                                   <figure style="background:url({%static './images/related1.jpg'%})no-repeat"></figure>
+                                    <a href="#" class="category-ttl">Health</a>
+                                </div>
+                                <h3>Girl walking on the road in early morning for mood.</h3>
+                                <h6>Lorem Ipsum is simply dummy text of the printing and typesetbeen the industry's standard dummy text ever since the 1500s, when an unknown printer</h6>
+                                <ul class="post-tools">
+                                    <li class="admin"><a href="#">Admin </a></li>
+                                    <li class="date">23 Jan 2018</li>
+                                </ul>
+                            
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            {% endblock %}
+            <aside class="aside-sec">
+               <!--  <div class="ads-sec">
+                    <h2>Advertisement</h2>
+                    <img src="images/600-ad.jpg" alt="ad">
+                </div> -->
+                <div class="popular-posts">
+                    <h2>Popular {{ tag }}s</h2>
+                    <div class="p_post-item">
+                        <div class="img-sec">
+                            <img src="{% static 'images/pop-post1.jpg' %}" alt="pop-post">
+                            <a href="#" class="category-ttl">{{ catrgory }}</a>
+                        </div>
+                        <h3>Girl walking on the road in early morning for mood.</h3>
+                        <h6>Lorem Ipsum is simply dummy text of the printing and typesetbeen the industry's standard dummy text ever since the 1500s, when an unknown printer</h6>
+                        <ul class="post-tools">
+                            <li class="admin"><a href="#">Admin </a></li>
+                            <li class="date">23 Jan 2018</li>
+                        </ul>
+                    </div>
+                    <div class="p_post-item">
+                        <div class="img-sec">
+                            <img src="{% static 'images/pop-post2.jpg' %}" alt="pop-post">
+                            <a href="#" class="category-ttl">Health</a>
+                        </div>
+                        <h3>Girl walking on the road in early morning for mood.</h3>
+                        <h6>Lorem Ipsum is simply dummy text of the printing and typesetbeen the industry's standard dummy text ever since the 1500s, when an unknown printer</h6>
+                        <ul class="post-tools">
+                            <li class="admin"><a href="#">Admin </a></li>
+                            <li class="date">23 Jan 2018</li>
+                        </ul>
+                    </div>
+                    <div class="p_post-item">
+                        <div class="img-sec">
+                            <img src="{% static 'images/pop-post1.jpg' %}" alt="pop-post">
+                            <a href="#" class="category-ttl">Health</a>
+                        </div>
+                        <h3>Girl walking on the road in early morning for mood.</h3>
+                        <h6>Lorem Ipsum is simply dummy text of the printing and typesetbeen the industry's standard dummy text ever since the 1500s, when an unknown printer</h6>
+                        <ul class="post-tools">
+                            <li class="admin"><a href="#">Admin </a></li>
+                            <li class="date">23 Jan 2018</li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </section>
+{% endblock %}

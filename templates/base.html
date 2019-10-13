@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>小Q菌的技术小镇 —— 爱好二次元的程序员学习交流社区</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css'%}">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700|Roboto+Slab:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'font-awesome\css\font-awesome.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+    <header>
+        <div class="news_ticker_sec">
+            <div class="container">
+                <div class="news_ticker">
+                    <div class="title">Quanfita's Town</div>
+                    <div class="news-container">Welcome to join us who love technology and love to do things...<a href="#"> Read More</a></div>
+                    <div class="share-sec right">
+                        <ul>
+                            <li>
+                                <a href="http://connect.qq.com/widget/shareqq/index.html?url=http://127.0.0.1&sharesource=qzone&title=小Q菌的技术小镇&pics=&flash=&site=QQ互联文档库&summary=只要你热爱技术或者热爱二次元，你一定会爱上这里&desc=小Q菌的技术小镇 —— 爱好二次元的程序员学习交流社区"> <span class="fab fa-qq"></span></a>
+                            </li>
+                            <li>
+                                <a href=""> <span class="fab fa-weixin"></span></a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/quanfita"> <span class="fab fa-twitter"></span></a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/Quanfita"> <span class="fab fa-github"></span></a>
+                            </li>
+                            <li>
+                                <a href="https://space.bilibili.com/134755800"><span class="fa fa-bilibili"></span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-menu">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="navbar-brand" href="/"><img src="{% static 'images/logo.png' %}" alt="logo"></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto">
+                            {% if tag == "Home" %}
+                            <li class="nav-item active">
+                                <a href="/" class="nav-link">Home</a>
+                            </li>
+                            {% else %}
+                            <li class="nav-item">
+                                <a href="/" class="nav-link">Home</a>
+                            </li>
+                            {% endif %}
+                            {% if tag == "Blog" %}
+                            <li class="navbar-item active">
+                                <a href="/blog-list" class="nav-link">Blog</a>
+                            </li>
+                            {% else %}
+                            <li class="navbar-item">
+                                <a href="/blog-list" class="nav-link">Blog</a>
+                            </li>
+                            {% endif %}
+                            {% if tag == "Video" %}
+                            <li class="navbar-item active">
+                                <a href="/video-list" class="nav-link">Videos</a>
+                            </li>
+                            {% else %}
+                            <li class="navbar-item">
+                                <a href="/video-list" class="nav-link">Videos</a>
+                            </li>
+                            {% endif %}
+                            {% if tag == "Category" %}
+                            <li class="navbar-item active">
+                                <a href="/category" class="nav-link">Categories</a>
+                            </li>
+                            {% else %}
+                            <li class="navbar-item">
+                                <a href="/category" class="nav-link">Categories</a>
+                            </li>
+                            {% endif %}
+                            {% if tag == "Contact" %}
+                            <li class="navbar-item active">
+                                <a href="/contact" class="nav-link">Contact</a>
+                            </li>
+                            {% else %}
+                            <li class="navbar-item">
+                                <a href="/contact" class="nav-link">Contact</a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                        <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Type your search here..." aria-label="Search">
+                            <span class="fa fa-search"></span>
+                        </form>
+                    </div>
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle"
+                               data-toggle="dropdown"
+                               style="margin-left:15px;height: 60px">
+                               <span class="fa fa-user-circle fa-3x"></span>
+                                <!--<img alt="" class="img-circle" src="photo.jpg" width="38px" height="38px"/>
+                                <span style="color: #FFFFFF;font-size: 15px">-->
+                            </span>
+                            </a>
+                            <div class="dropdown-menu"
+                                 style="background: #FFFFFF;width: 240px;overflow: hidden">
+                                 {% if session.is_login %}
+                                <div style="margin-top: 16px;border-bottom: 1px solid #eeeeee">
+                                    <div style="text-align: center">
+                                        <img class="img-circle" src="/{{ user.avatar }}"
+                                             style="width: 38px;height: 38px;"/>
+                                        <!--<span class="fa fa-user-circle fa-3x"></span>-->
+                                    </div>
+                                    <div style="color: #323534;text-align: center;line-height: 36px;font-size: 15px">
+                                        <span>{{session.user_name}}</span>
+                                    </div>
+                                </div>
+ 
+                                <div class="row" style="margin-left: 15px;margin-right: 15px;margin-top: 10px">
+                                    <div class="col-md-6 text-center grid">
+                                        <a href="{% url 'User:space' %}?id={{ session.user_id }}">
+                                        <i class="fa fa-user" style="font-size: 25px;line-height: 45px;"></i>
+                                        <p style="padding: 0px;margin-top: 6px;margin-bottom: 10px;font-size: 12px">
+                                            个人中心</p>
+                                            </a>
+                                    </div>
+                                    <div class="col-md-6 text-center grid">
+                                        <i class="fa fa-book" style="font-size: 25px;line-height: 45px;"></i>
+                                        <p style="padding: 0px;margin-top: 6px;margin-bottom: 10px;font-size: 12px">
+                                            我的博客</p>
+                                    </div>
+                                </div>
+ 
+                                <div class="row" style="margin-left: 15px;margin-right: 15px;margin-top: 10px">
+                                    <div class="col-md-6 text-center grid">
+                                        <i class="fa fa-play-circle" style="font-size: 25px;line-height: 45px;"></i>
+                                        <p style="padding: 0px;margin-top: 6px;margin-bottom: 10px;font-size: 12px">
+                                            我的视频</p>
+                                    </div>
+                                    <div class="col-md-6 text-center grid">
+                                        <i class="fa fa-comments" style="font-size: 25px;line-height: 45px;"></i>
+                                        <p style="padding: 0px;margin-top: 6px;margin-bottom: 10px;font-size: 12px">
+                                            消息</p>
+                                    </div>
+                                </div>
+ 
+ 
+                                <div style="margin-top: 20px;border-top: 1px solid #eeeeee">
+                                    <div class="col-md-4 text-center grid"
+                                         style="padding: 5px;margin-top: 5px;color: #323534;">
+                                        <p style="font-size: 14px"><a href="{% url 'User:logout' %}">退出</a></p>
+                                    </div>
+                                </div>
+                                {% else %}
+                                <div style="margin-top: 20px;border-top: 1px solid #eeeeee">
+                                    <div class="col-md-4 text-center grid"
+                                         style="padding: 5px;margin-top: 5px;color: #323534;">
+                                        <p style="font-size: 14px"><a href="{% url 'User:login' %}">登录</a></p>
+                                    </div>
+                                </div>
+                                <div style="margin-top: 20px;border-top: 1px solid #eeeeee">
+                                    <div class="col-md-4 text-center grid"
+                                         style="padding: 5px;margin-top: 5px;color: #323534;">
+                                        <p style="font-size: 14px"><a href="{% url 'User:register' %}">注册</a></p>
+                                    </div>
+                                </div>
+                                {% endif %}
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    {% block mainbody %}
+    {% endblock %}
+    <footer>
+        <div class="footer_widgets">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="pop-posts">
+                            <h2>Popular Posts</h2>
+                            <div class="post-content small-post">
+                                <figure style="background:url({% static './images/tab4.jpg' %})no-repeat"></figure>
+                                <div class="content">
+                                    <a href="#">
+                                        <h3 class="post-ttl">Girl walking on the road in early morning for mood.</h3>
+                                    </a>
+                                    <ul class="post-tools">
+                                        <li class="admin"><a href="#">Admin </a></li>
+                                        <li class="date">23 Jan 2018</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="post-content small-post">
+                                <figure style="background:url({% static './images/tab5.jpg' %})no-repeat"></figure>
+                                <div class="content">
+                                    <a href="#">
+                                        <h3 class="post-ttl">Girl walking on the road in early morning for mood.</h3>
+                                    </a>
+                                    <ul class="post-tools">
+                                        <li class="admin"><a href="#">Admin </a></li>
+                                        <li class="date">23 Jan 2018</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="post-content small-post">
+                                <figure style="background:url({% static './images/tab6.jpg' %})no-repeat"></figure>
+                                <div class="content">
+                                    <a href="#">
+                                        <h3 class="post-ttl">Girl walking on the road in early morning for mood.</h3>
+                                    </a>
+                                    <ul class="post-tools">
+                                        <li class="admin"><a href="#">Admin </a></li>
+                                        <li class="date">23 Jan 2018</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 categories">
+                        <h2>Categories</h2>
+                        <ul>
+                            {% for cate in category %}
+                            <li><a href="#">{{ cate }}</a></li>
+                            {% endfor %}
+                            <!--
+                            <li><a href="#">Corporation (2)</a></li>
+                            <li><a href="#">Critics (1)</a></li>
+                            <li><a href="#">Digital Business (2)</a></li>
+                            <li><a href="#">Beauty tips (7)</a></li>
+                            <li><a href="#">Collection (7)</a></li>
+                            <li><a href="#">Celebrity (7)</a></li>
+                            <li><a href="#">Cooking (20)</a></li>-->
+                        </ul>
+                    </div>
+                    <div class="col-md-4 instragram">
+                        <h2>Instagram Feed</h2>
+                        <ul>
+                            <li>
+                                <figure style="background:url({% static './images/insta1.jpg' %})no-repeat"></figure>
+                            </li>
+                            <li>
+                                <figure style="background:url({% static './images/insta2.jpg' %})no-repeat"></figure>
+                            </li>
+                            <li>
+                                <figure style="background:url({% static './images/insta3.jpg' %})no-repeat"></figure>
+                            </li>
+                            <li>
+                                <figure style="background:url({% static './images/insta4.jpg' %})no-repeat"></figure>
+                            </li>
+                            <li>
+                                <figure style="background:url({% static './images/insta1.jpg' %})no-repeat"></figure>
+                            </li>
+                            <li>
+                                <figure style="background:url({% static './images/insta2.jpg' %})no-repeat"></figure>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer_copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-4 logo-side">
+                        <img src="{% static 'images/logo.png' %}" alt="logo">
+                    </div>
+                    <div class="col-lg-6 col-md-8">
+                        <ul class="footer-menu">
+                            <li>
+                                <a href="/">Home</a>
+                            </li>
+                            <li>
+                                <a href="/video-list">Videos</a>
+                            </li>
+                            <li>
+                                <a href="/category">categories</a>
+                            </li>
+                            <li>
+                                <a href="/blog-list">blog</a>
+                            </li>
+                            <li>
+                                <a href="/contact">contact</a>
+                            </li>
+                        </ul>
+                        <h5 class="copy-right">Copyright &copy; 小Q菌的文化小镇 <a href="http://Quanfita.cn/" target="_blank" title="Quanfita\'s blogs">Quanfita</a></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" href="{% static 'js/popper.min.js' %}"></script>
+    <script defer src="{% static 'js/all.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+</body>
+
+</html>
